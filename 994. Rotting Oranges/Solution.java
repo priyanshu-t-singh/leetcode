@@ -3,6 +3,9 @@
 // level by level, rotting adjacent fresh oranges in each iteration. We also keep track
 // of the number of fresh oranges and the time taken for all oranges to rot. If there
 // are still fresh oranges left after processing, we return -1.
+// 
+// Time complexity: O(m*n) where m is the number of rows and n is the number of columns in the grid.
+// Space complexity: O(m*n) for the queue and visited array.
 
 class Solution {
     public int orangesRotting(int[][] grid) {

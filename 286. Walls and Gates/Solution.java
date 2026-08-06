@@ -1,4 +1,6 @@
 // Similar to Q994. Rotting Oranges
+// Time complexity: O(m*n)^2 where m is the number of rows and n is the number of columns in the grid.
+// Space complexity: O(m*n) for the queue.
 
 class Solution {
 
