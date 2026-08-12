@@ -1,6 +1,6 @@
 // Time Complexity: O(N + M), where N is the number of nodes and M is the number of edges in the graph.
 // Space Complexity: O(N), where N is the number of nodes in the graph.
-class Solution {
+class SolutionBFS {
     public Node cloneGraph(Node node) {
         if (node == null) return node;
         
@@ -13,7 +13,7 @@ class Solution {
 
         while (!q.isEmpty()) {
             Node cur = q.poll();
-            Node nn = mp.get(cur);
+            Node clone = mp.get(cur);
 
             for (Node neighbor : cur.neighbors) {
                 if (!mp.containsKey(neighbor)) {
@@ -21,7 +21,7 @@ class Solution {
                     mp.put(neighbor, new Node(neighbor.val));
                 }
 
-                nn.neighbors.add(mp.get(neighbor));
+                clone.neighbors.add(mp.get(neighbor));
             }
         }
 
