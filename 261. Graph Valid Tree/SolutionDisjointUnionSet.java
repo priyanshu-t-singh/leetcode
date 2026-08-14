@@ -1,4 +1,4 @@
-// Time Complexity: O(n + e * 4 * alpha) where n is the number of nodes and e is the number of edges.
+// Time Complexity: O(n + (e * alpha(n))) where n is the number of nodes and e is the number of edges.
 // Space Complexity: O(n) for the size and parent arrays.
 class SolutionDisjointUnionSet {
     private int[] size;
