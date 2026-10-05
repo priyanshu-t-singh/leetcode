@@ -2,19 +2,22 @@
 // Space Complexity: O(1) (not counting the output array)
 class Solution {
     public int[] productExceptSelf(int[] nums) {
-        int[] res = new int[nums.length];
-        int left = 1;
+        int[] result = new int[nums.length];
+
+        // Prefix product
+        int product = 1;
         for (int i = 0; i < nums.length; i++) {
-            res[i] = left;
-            left *= nums[i];
+            result[i] = product;
+            product *= nums[i];
         }
 
-        int right = 1;
-        for (int i = nums.length-2; i >= 0; i--) {
-            res[i] *= right * nums[i+1];
-            right *= nums[i+1];
+        // Suffix product
+        product = 1;
+        for (int i = nums.length-1; i >= 0; i--) {
+            result[i] *= product;
+            product *= nums[i];
         }
 
-        return res;
+        return result;
     }
 }
